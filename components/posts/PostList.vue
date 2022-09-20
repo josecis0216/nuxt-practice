@@ -1,31 +1,21 @@
 <template>
     <section class="posts-list">
         <PostPreview 
-      id="1"
-      is-admin="isAdmin"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="Tech in Today's World"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
-      />
-      <PostPreview 
-      id="2"
-      is-admin="isAdmin"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="New Tech Today"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
-      />
-      <PostPreview 
-      id="3"
-      is-admin="isAdmin"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="Tech in Tomorrow's World"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
+        v-for="post in posts"
+        :key="post.id"
+        :id="post.id"
+        :is-admin="post.isAdmin"
+        :title="post.title"
+        :author="post.author"
+        :thumbnail="post.thumbnail"
+        :previewText="post.previewText"
+
       />
     </section>
 </template>
 
-<script>
-    import PostPreview from '~/components/posts/PostPreview.vue'
+<script scoped>
+    import PostPreview from '~/components/Posts/PostPreview.vue';
     
     export default {
       components: {
@@ -35,6 +25,10 @@
         isAdmin: {
           type: Boolean,
           default: false
+        },
+        posts: {
+          type: Array,
+          required: true
         }
       }
     }

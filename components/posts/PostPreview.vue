@@ -1,8 +1,9 @@
 <template>
-    <nuxt-link :to="postLink" class="post-preview">
+    <nuxt-link :to="postLink">
         <article class="post-preview">
             <div class="post-thumbnail" 
-            :style="{backgroundImage: 'url(' + thumbnail + ')'}"></div>
+            :style="{backgroundImage: 'url(' + thumbnail + ')'}">
+          </div>
             <div class="post-content">
               <h1>{{ title }}</h1>
             <p>{{ previewText }}</p>
@@ -37,7 +38,7 @@
             }
         },
         computed: {
-          linkPost() {
+          postLink() {
             return this.isAdmin ? '/admin/' + this.id : '/posts/' + this.id;
           }
         }
