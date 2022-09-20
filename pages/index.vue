@@ -3,35 +3,16 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview 
-      id="1"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="Tech in Today's World"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
-      />
-      <PostPreview 
-      id="2"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="New Tech Today"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
-      />
-      <PostPreview 
-      id="3"
-      thumbnail="https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280"
-      title="Tech in Tomorrow's World"
-      previewText="dignissimos veniam cumque ea dolorum pariatur quibusdam nulla, doloremque quam soluta voluptates magni nostrum et! Ex, voluptatem!"
-      />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from '~/components/posts/PostPreview.vue'
+import PostList from '~/components/posts/PostList.vue'
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 }
 </script>
