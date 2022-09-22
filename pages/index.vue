@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts"/>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -14,9 +14,10 @@ export default {
   components: {
     PostList
   },
-  data() {
-    return {
-      loadedPosts: [
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
         {
           id: '1',
           title: 'First Post',
@@ -32,8 +33,14 @@ export default {
           thumbnail: 'https://thehill.com/wp-content/uploads/sites/2/2022/04/eyescan_technology_cyber_istock_0412.jpg?w=1280'
         }
       ]
-    }
-  }
+      })
+    })
+  },
+  // data() {
+  //   return {
+      
+  //   }
+  //  }
 }
 </script>
 

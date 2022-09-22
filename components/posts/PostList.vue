@@ -4,7 +4,7 @@
         v-for="post in posts"
         :key="post.id"
         :id="post.id"
-        :is-admin="post.isAdmin"
+        :is-admin="isAdmin"
         :title="post.title"
         :author="post.author"
         :thumbnail="post.thumbnail"
@@ -24,8 +24,7 @@
       props: {
         isAdmin: {
           type: Boolean,
-          default: false
-        },
+          default: false        },
         posts: {
           type: Array,
           required: true
