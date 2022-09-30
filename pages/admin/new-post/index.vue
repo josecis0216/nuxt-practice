@@ -7,11 +7,20 @@
 </template>
 
 <script>
+    import axios from 'axios';
     import AdminPostForm from '@/components/Admin/AdminPostForm.vue';
 
     export default {
+        layout: 'admin',
         components: {
             AdminPostForm
         },
+        methods: {
+            onSubmitted(postData) {
+                axios.post('', postData)
+                .then(result => console.log(result))
+                .catch(e => console.log(e));
+            }
+        }
     };
 </script>
